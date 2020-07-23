@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#header{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    margin: 5vh auto;
+    border: 2px solid #1f94ed;
+    border-radius: 50%;
+    z-index: -1;
+    max-width: 500px;
+    max-height: 500px;
+    transition: border 1s ease-in-out;
+}
+.spinner:after {
+    content: "";
+    width: 85%;
+    height: 85%;
+    background: -webkit-linear-gradient(45deg, white 0%, white 40%, rgba(255, 255, 255, 0.7) 60%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-5%, -5%);
+}
+.spinner.moon {
+    border-left: 0;
+    border-top: 0;
+}
+.spinner.moon:after {
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.countdown {
+    position: relative;
+}
+
+.timmer, .set {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10vw;
+}
+
+.set {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    width: 99%;
+    height: 99%;
+    /* max-width: 500px;
+    max-height: 500px; */
+    border-radius: 50%;
+    background: white;
+    /* border: 2px solid #1f94ed; */
+    /* background-image:
+        linear-gradient(91deg, transparent 50%, white 50%),
+        linear-gradient(90deg, white 50%, transparent 50%); */
+}
+
+.circle {
+    position: absolute;
+    text-align: center;
+    width: 50vw;
+    height: 50vw;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color:#39B4CC; */
+    background:
+        linear-gradient(90deg, transparent 50%, #1f94ed 50%),
+        linear-gradient(90deg, #1f94ed 50%, transparent 50%);
+}
+
+.setCount {
+    font-size: 3rem;
+}
+
+.slidebtn {
+    font-size: 5vw;
+}
